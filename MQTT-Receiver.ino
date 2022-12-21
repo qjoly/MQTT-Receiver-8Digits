@@ -154,7 +154,7 @@ void entry() {
       buffer[1] = message[2];
       buffer[2] = message[3];
       buffer[3] = message[4];
-      buffer[4] = 0;
+     // buffer[4] = 0;
 
       temperature = atof (buffer);
       //Serial.print(num);
@@ -219,7 +219,7 @@ void loop() {
     }
   else {
     if (!client.connected()) {
-      reconnect(); client.subscribe("temp/pc");
+      reconnect(); client.subscribe("cluster/temp");
     }
     client.loop();
       }
